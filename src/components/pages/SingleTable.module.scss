@@ -1,0 +1,32 @@
+label{
+  font-size: 18px;
+  font-weight: 550;
+  margin-left: 20px;
+}
+
+.tableStatus{
+  width: 200px;
+  border-radius: 5px;
+  margin: 10px 0 20px 20px;
+  background-color: white;
+}
+
+.peopleAmount{
+  width: 30px;
+  border-radius: 5px;
+  margin: 0 10px 20px 10px;
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+.billAmount{
+  width: 80px;
+  border-radius: 5px;
+  margin: 0 0 20px 40px;
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+.button{
+  margin-left: 20px;
+}
