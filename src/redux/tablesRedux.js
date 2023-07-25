@@ -1,25 +1,22 @@
-// selectors
-const getTables = state => state.tables; // Selektor zwracający całą tablicę z tabelami
+import initialState from './initialState';
+import { addTable, updateTable } from './actions';
 
-// actions
-const createActionName = actionName => `app/tables/${actionName}`;
+export const getTables = state => state.tables;
 
-const ADD_TABLE = createActionName('ADD_TABLE');
-
-// action creators
-export const addTable = tableData => ({
-  type: ADD_TABLE,
-  payload: tableData,
-});
-
-// reducer
-const tablesReducer = (statePart = [], action) => {
+const tablesReducer = (statePart = initialState.tables, action) => {
   switch (action.type) {
-    case ADD_TABLE:
-      return [...statePart, action.payload]; // Dodajemy nową tabelę do tablicy
+    case addTable:
+      return [...statePart, action.payload]; // Dodajemy nowy stolik do tablicy
+    case updateTable:
+      return statePart.map((table) =>
+        table.id === action.payload.id ? { ...table, ...action.payload } : table
+      ); // Aktualizujemy dane istniejącego stolika
     default:
       return statePart;
-  };
+  }
 };
 
 export default tablesReducer;
+
+
+//const createActionName = actionName => `app/tables/${actionName}`;

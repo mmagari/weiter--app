@@ -11,7 +11,7 @@ const TableList = () => {
       try {
         const response = await fetch('http://localhost:3131/tables');
         const data = await response.json();
-        setTables(data); // Ustawienie danych stolików w stanie komponentu
+        setTables(data); 
         setLoading(false);
       } catch (error) {
         console.error('Error fetching data:', error);

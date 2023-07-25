@@ -1,6 +1,5 @@
-// actions.js
 const ADD_TABLE = 'app/tables/ADD_TABLE';
-const UPDATE_TABLE = 'app/tables/UPDATE_TABLE'; // Nowa akcja do aktualizacji danych stolika
+const UPDATE_TABLE = 'app/tables/UPDATE_TABLE';
 
 export const addTable = (tableData) => ({
   type: ADD_TABLE,
