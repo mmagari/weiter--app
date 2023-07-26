@@ -7,6 +7,7 @@ import PeopleInputs from './PeopleInputs';
 import BillInput from './BillInput';
 import HandleUpdate from './HandleUpdate';
 import HandleStatusChange from './HandleStatusChange.js';
+import { API_URL } from '../../config.js';
 
 const SingleTable = () => {
   const { id } = useParams();
@@ -28,7 +29,7 @@ const SingleTable = () => {
     const fetchData = async () => {
       try {
         setLoading(true);
-        const response = await fetch(`http://localhost:3131/tables/${id}`);
+        const response = await fetch(`${API_URL}/tables/${id}`);
         if (response.ok) {
           const data = await response.json();
           dispatch(updateTable(data));
