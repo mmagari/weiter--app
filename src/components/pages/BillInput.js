@@ -1,4 +1,3 @@
-import React from 'react';
 import styles from './SingleTable.module.scss';
 
 const BillInput = ({ bill, onBillChange }) => {
