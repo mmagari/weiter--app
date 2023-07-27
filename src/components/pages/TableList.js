@@ -2,6 +2,8 @@ import React, { useState, useEffect }
 from 'react';import { Button } from 'react-bootstrap';
 import styles from "./TableList.module.scss";
 import { Link } from 'react-router-dom';
+import { API_URL } from '../../config.js';
+
 
 const TableList = () => {
   const [tables, setTables] = useState([]);
@@ -9,7 +11,7 @@ const TableList = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:3131/tables');
+        const response = await fetch(`${API_URL}/tables`);
         const data = await response.json();
         setTables(data); 
         setLoading(false);
